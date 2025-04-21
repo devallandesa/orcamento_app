@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Orçamentos</title>
+</head>
+<body>
+    <h2>Bem-Vindo, {{ request.user.username }}!</h2>
+    <a href="{% url 'logout'}">Sair</a>
+
+    <h3>Lista de Orçamentos</h3>
+    <ul>
+        {% for orcamento in orcamentos%}
+            <li>
+                {{ orcamento.descricao }} - R$ {{ orcamento.valor }}
+            </li>
+            {% endfor %}
+    </ul>
+</body>
+</html>
